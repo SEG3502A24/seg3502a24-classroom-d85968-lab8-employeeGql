@@ -1,0 +1,28 @@
+extend type Query {
+    employees(email: String!): [Employee]
+}
+
+type Employee { email: String!
+    firstName: String!
+    lastName: String!
+    name: String!
+    dateOfBirth: String!
+    city: String!
+    salary: Float!
+    gender: String!
+}
+
+input CreateEmployeeInput {
+    firstName: String!
+    lastName: String!
+    name: String!
+    dateOfBirth: String!
+    city: String!
+    salary: Float!
+    gender: String!
+    email: String!
+}
+
+extend type Mutation {
+    newEmployee(createEmployeerInput: CreateEmployeeInput!) : Employee!
+}
